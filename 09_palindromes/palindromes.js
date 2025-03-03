@@ -1,33 +1,19 @@
 const palindromes = function (text) {
-    text = text.toLowerCase();
-    let text2 = "";
-    let panjang = text.length;
-    let bool = "";
+    text = text.toLowerCase()
+    .split('')
+    .filter(item => ((item >= 'a' && item <= 'z') || (item >= '0' && item <= '9')));
 
-    // only store letter and number
-    for (i = 0; i < panjang; i++){
-        charOfLetter = text.charCodeAt(i);
-        if ((charOfLetter > 96 && charOfLetter < 123) || (charOfLetter > 47 && charOfLetter < 58)){
-            console.log(text[i]);
-            text2 = text2.concat(text[i]);
-        }
-    }
+    let reverse = text
+    .reverse()
+    .join('');
 
-    panjang = text2.length;
-    // exclude middle char for odd lengthed text
-    if (panjang % 2 == 0){
-        let tengah = panjang/2;
-    } let tengah = (panjang-1)/2;
+    let textOri = text
+    .reverse()
+    .join('');
 
-    for (i = 0; i < tengah; i++){
-        rightLetterIndex = panjang-1-i;
-        if(text2[i] == text2[rightLetterIndex]){
-            continue;
-        } else {
-            return false;
-        }
-    }
-    return true;
+    console.log(textOri);
+    console.log(reverse);
+    return textOri == reverse ? true : false;
 };
 
 // Do not edit below this line
