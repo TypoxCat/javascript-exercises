@@ -1,35 +1,17 @@
-const add = function(awal, ...args) {
-  let total = awal;
-  args.forEach((item) => {
-    total += item;
-  });
-	return total;
+const add = function(a, b) {
+  return a+b;
 };
 
-const subtract = function(awal, ...args) {
-	let total = awal;
-  args.forEach((item) => {
-    total -= item;
-  });
-	return total;
+const subtract = function(a,b) {
+  return a-b;
 };
 
 const sum = function(array) {
-  if (!array.length){
-    return 0;
-  }
-  return array.reduce(function(total, num) {
-    return total + num;
-  });
+  return array.reduce((sum, val) => sum+val, 0)
 };
 
 const multiply = function(array) {
-  if (!array.length){
-    return 0;
-  }
-  return array.reduce(function(total, num) {
-    return total * num;
-  });
+  return array.reduce((mul, val) => mul * val, 1)
 };
 
 const power = function(base, power) {
@@ -37,15 +19,12 @@ const power = function(base, power) {
 };
 
 const factorial = function(number) {
-  let hasil = number;
-  if (number < 1){
-    return 1;
+  let total = 1;
+  while (number > 0){
+    total = total * number;
+    number--;
   }
-
-	for (i = number-1; i > 0; i--){
-    hasil *= i;
-  }
-  return hasil;
+  return total;
 };
 
 // Do not edit below this line

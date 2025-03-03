@@ -3,16 +3,15 @@ const findTheOldest = function(array) {
     let maxAgeName, maxAge = 0, maxBirth = 0;
     let noDeathData = false;
 
-    // condition if there is undefined
+    // condition if there is undefined death year
     array.forEach(element => {
         if (element.yearOfDeath == undefined){
-            maxBirth = element.yearOfBirth;
-            noDeathData = true;
-            noDeathName = element.name;
-            console.log(maxBirth);
+            defineVariable(element.name, element.yearOfBirth, element.yearOfDeath);
+            age = Date().getFullYear()
+            console.log(age)
         }
     });
-
+    // main algorithm
     if (noDeathData){
         compareBirthYear();
         if (maxAgeName != noDeathName){
@@ -22,6 +21,7 @@ const findTheOldest = function(array) {
         compareAges();
     }
 
+    // functions
     function compareBirthYear(){
         array.forEach(element => {
             defineVariable(element.name, element.yearOfBirth, element.yearOfDeath);
@@ -57,6 +57,7 @@ const findTheOldest = function(array) {
         maxBirth = b;
     }
 
+    // to output
     const oldest = {
         name: maxAgeName
     }
